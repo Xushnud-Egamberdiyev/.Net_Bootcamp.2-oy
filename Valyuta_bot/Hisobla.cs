@@ -46,7 +46,7 @@ namespace Valyuta_bot
                     isEnter = false;
                     Message sentMessage5 = await botClient.SendTextMessageAsync(
                         chatId: update.CallbackQuery.From.Id,
-                        text: item.cb_price,
+                        text: $"{item.title}. \nShu kungi kurs narxi bo'yicha olingan malumot({item.date})\n{item.cb_price}",
                         cancellationToken: cancellationToken);
                 }  
 

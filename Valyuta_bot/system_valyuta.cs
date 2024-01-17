@@ -84,7 +84,7 @@ namespace Valyuta_bot
             {
                 new List<InlineKeyboardButton>
                 {
-                    InlineKeyboardButton.WithCallbackData("1","GBP"),
+                    InlineKeyboardButton.WithCallbackData("1","USD"),
                     InlineKeyboardButton.WithCallbackData("2","ISK"),
                     InlineKeyboardButton.WithCallbackData("3","JPY"),
                     InlineKeyboardButton.WithCallbackData("4","KRW"),
@@ -111,7 +111,7 @@ namespace Valyuta_bot
                     InlineKeyboardButton.WithCallbackData("13","SGD"),
                     InlineKeyboardButton.WithCallbackData("14","TRY"),
                     InlineKeyboardButton.WithCallbackData("15","UAH"),
-                    InlineKeyboardButton.WithCallbackData("16","USD"),
+                    InlineKeyboardButton.WithCallbackData("16","GPB"),
 
                 },
                 new List<InlineKeyboardButton>()
@@ -136,35 +136,59 @@ namespace Valyuta_bot
             {
                 Message sentMessage4 = await botClient.SendTextMessageAsync(
                     chatId: update.CallbackQuery.From.Id,
-                    text: "1--> GBP : Title ->Angliya funt sterlingi\r\n" +
-                    "2—-> ISK : Title ->Islandiya kronasi\r\n" +
-                    "3—-> JPY : Title ->Yaponiya iyenasi\r\n" +
-                    "4—-> KRW : Title ->Koreya respublikasi voni\r\n" +
-                    "5—-> KWD : Title ->Quvayt dinori\r\n" +
-                    "6—-> KZT : Title ->Qozog'iston tengesi\r\n" +
-                    "7—-> LBP : Title ->Livan funti\r\n" +
-                    "8—-> MYR : Title ->Malayziya ringgiti\r\n" +
-                    "9—-> NOK : Title ->Norvegiya kronasi\r\n" +
+                    text: "1—-> USD : Title ->AQSh dollari\r\n" +
+                    "-----------------------------------------\n" +
+                    "2—-_> ISK : Title ->Islandiya kronasi\r\n" +
+                    "-------------------------------------------\n"+
+                    "3—->  JPY : Title ->Yaponiya iyenasi\r\n" +
+                    "-------------------------------------------\n" +
+                    "4—->  KRW : Title ->Koreya respublikasi voni\r\n" +
+                    "-------------------------------------------\n" +
+                    "5—->  KWD : Title ->Quvayt dinori\r\n" +
+                    "-------------------------------------------\n" +
+                    "6—->  KZT : Title ->Qozog'iston tengesi\r\n" +
+                    "-------------------------------------------\n" +
+                    "7—->  LBP : Title ->Livan funti\r\n" +
+                    "-------------------------------------------\n" +
+                    "8—->  MYR : Title ->Malayziya ringgiti\r\n" +
+                    "-------------------------------------------\n" +
+                    "9—->  NOK : Title ->Norvegiya kronasi\r\n" +
+                    "-------------------------------------------\n" +
                     "10—-> PLN : Title ->Polsha zlotiysi\r\n" +
+                    "-------------------------------------------\n" +
                     "11—-> RUB : Title ->Rossiya rubli\r\n" +
+                    "-------------------------------------------\n" +
                     "12—-> SEK : Title ->Shvetsiya kronasi\r\n" +
+                    "-------------------------------------------\n" +
                     "13—-> SGD : Title ->Singapur dollari\r\n" +
+                    "-------------------------------------------\n" +
                     "14—-> TRY : Title ->Turkiya lirasi\r\n" +
+                    "-------------------------------------------\n" +
                     "15—-> UAH : Title ->Ukraina grivnasi\r\n" +
-                    "16—-> USD : Title ->AQSh dollari\r\n"+
-                    "17-—> AED : Title ->BAA dirhami\r\n"+
-                    "18—-> AUD : Title ->Avstraliya dollari\r\n"+
-                    "19—-> CAD : Title ->Kanada dollari\r\n"+
-                    "20—-> CHF : Title ->Shveytsariya franki\r\n"+
-                    "21—-> CNY : Title ->Xitoy yuani\r\n"+
-                    "22—-> DKK : Title ->Daniya kronasi\r\n"+
-                    "23—-> EGP : Title ->Misr funti\r\n"+
-                    "24—-> EUR : Title ->Evro\r\n",
+                    "-------------------------------------------\n" +
+                    "16--> GBP : Title ->Angliya funt sterlingi\r\n" +
+                    "-------------------------------------------\n" +
+                    "17-—> AED : Title ->BAA dirhami\r\n" +
+                    "-------------------------------------------\n" +
+                    "18—-> AUD : Title ->Avstraliya dollari\r\n" +
+                    "-------------------------------------------\n" +
+                    "19—-> CAD : Title ->Kanada dollari\r\n" +
+                    "-------------------------------------------\n" +
+                    "20—-> CHF : Title ->Shveytsariya franki\r\n" +
+                    "-------------------------------------------\n" +
+                    "21—-> CNY : Title ->Xitoy yuani\r\n" +
+                    "-------------------------------------------\n" +
+                    "22—-> DKK : Title ->Daniya kronasi\r\n" +
+                    "-------------------------------------------\n" +
+                    "23—-> EGP : Title ->Misr funti\r\n" +
+                    "-------------------------------------------\n" +
+                    "24—-> EUR : Title ->Evro\r\n"+
+                    "-------------------------------------------\n" ,
 
 
                    replyMarkup: new InlineKeyboardMarkup(buttons_Valyuta),
 
-                    cancellationToken: cancellationToken);
+                    cancellationToken: cancellationToken);;
            
                 
             }
@@ -223,9 +247,9 @@ namespace Valyuta_bot
         {
             
 
-            Console.WriteLine($"Received a '{update.Message.Text}' message in chat ,{update.Message.Chat.Id} ");
+            Console.WriteLine($"Received a '{update.Message.Text}' message in chat ,{update.Message.Chat.LastName} {update.Message.Chat.FirstName} ");
 
-            var button = InlineKeyboardButton.WithCallbackData(text: "Davay", callbackData: "Yes");
+            var button = InlineKeyboardButton.WithCallbackData(text: "Boshlash", callbackData: "Yes");
 
             if (update.Message.Text == "/start")
             {
