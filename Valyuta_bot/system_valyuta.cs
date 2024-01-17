@@ -72,7 +72,7 @@ namespace Valyuta_bot
 
 
 
-        async Task HandleCallBackQueryAsymc(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+        public async Task HandleCallBackQueryAsymc(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
 
            
@@ -144,10 +144,19 @@ namespace Valyuta_bot
                     chatId: update.CallbackQuery.From.Id,
                    text: update.CallbackQuery.Data,
                     cancellationToken: cancellationToken);
-            
+                string name = update.CallbackQuery?.Data;
+
+                
+
+
+                Hisobla hisobla = new Hisobla(name);
+                hisobla.ShowName();
+                
+                
+
             }
 
-                    
+
 
         }
 
