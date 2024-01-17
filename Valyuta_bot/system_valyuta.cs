@@ -111,7 +111,7 @@ namespace Valyuta_bot
                     InlineKeyboardButton.WithCallbackData("13","SGD"),
                     InlineKeyboardButton.WithCallbackData("14","TRY"),
                     InlineKeyboardButton.WithCallbackData("15","UAH"),
-                    InlineKeyboardButton.WithCallbackData("16","GPB"),
+                    InlineKeyboardButton.WithCallbackData("16","GBP"),
 
                 },
                 new List<InlineKeyboardButton>()
