@@ -114,12 +114,29 @@ namespace Valyuta_bot
                     InlineKeyboardButton.WithCallbackData("16","USD"),
 
                 },
+                new List<InlineKeyboardButton>()
+                {
+                    InlineKeyboardButton.WithCallbackData("17","AED"),
+                    InlineKeyboardButton.WithCallbackData("18","AUD"),
+                    InlineKeyboardButton.WithCallbackData("19","CAD"),
+                    InlineKeyboardButton.WithCallbackData("20","CHF"),
+
+                },
+                new List<InlineKeyboardButton>()
+                {
+                    InlineKeyboardButton.WithCallbackData("21","CNY"),
+                    InlineKeyboardButton.WithCallbackData("22","DKK"),
+                    InlineKeyboardButton.WithCallbackData("23","EGP"),
+                    InlineKeyboardButton.WithCallbackData("24","EUR"),
+
+                },
+
             };
             if (update.CallbackQuery.Data == "Yes")
             {
                 Message sentMessage4 = await botClient.SendTextMessageAsync(
                     chatId: update.CallbackQuery.From.Id,
-                    text: "1—-> GBP : Title ->Angliya funt sterlingi\r\n" +
+                    text: "1--> GBP : Title ->Angliya funt sterlingi\r\n" +
                     "2—-> ISK : Title ->Islandiya kronasi\r\n" +
                     "3—-> JPY : Title ->Yaponiya iyenasi\r\n" +
                     "4—-> KRW : Title ->Koreya respublikasi voni\r\n" +
@@ -134,7 +151,17 @@ namespace Valyuta_bot
                     "13—-> SGD : Title ->Singapur dollari\r\n" +
                     "14—-> TRY : Title ->Turkiya lirasi\r\n" +
                     "15—-> UAH : Title ->Ukraina grivnasi\r\n" +
-                    "16—-> USD : Title ->AQSh dollari",
+                    "16—-> USD : Title ->AQSh dollari\r\n"+
+                    "17-—> AED : Title ->BAA dirhami\r\n"+
+                    "18—-> AUD : Title ->Avstraliya dollari\r\n"+
+                    "19—-> CAD : Title ->Kanada dollari\r\n"+
+                    "20—-> CHF : Title ->Shveytsariya franki\r\n"+
+                    "21—-> CNY : Title ->Xitoy yuani\r\n"+
+                    "22—-> DKK : Title ->Daniya kronasi\r\n"+
+                    "23—-> EGP : Title ->Misr funti\r\n"+
+                    "24—-> EUR : Title ->Evro\r\n",
+
+
                    replyMarkup: new InlineKeyboardMarkup(buttons_Valyuta),
 
                     cancellationToken: cancellationToken);

@@ -48,7 +48,7 @@ namespace Valyuta_bot
                         chatId: update.CallbackQuery.From.Id,
                         text: item.cb_price,
                         cancellationToken: cancellationToken);
-                }
+                }  
 
 
 
