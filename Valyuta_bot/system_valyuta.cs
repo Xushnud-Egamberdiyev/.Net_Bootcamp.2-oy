@@ -149,10 +149,12 @@ namespace Valyuta_bot
                 
 
 
-                Hisobla hisobla = new Hisobla(name);
-                hisobla.ShowName();
-                
-                
+                Hisobla hisobla = new Hisobla(update.CallbackQuery.Data);
+
+                hisobla.ShowName(botClient, update, cancellationToken);
+
+
+
 
             }
 

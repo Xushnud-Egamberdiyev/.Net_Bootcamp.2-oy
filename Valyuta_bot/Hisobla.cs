@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
+using Telegram.Bot;
+using Telegram.Bot.Types;
 
 namespace Valyuta_bot
 {
@@ -20,7 +23,10 @@ namespace Valyuta_bot
            
         }
 
-        public void ShowName()
+
+        
+
+        public async Task ShowName(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -32,19 +38,31 @@ namespace Valyuta_bot
 
             var courses = JsonSerializer.Deserialize<List<Model>>(boby);
 
-
+            var isEnter = true;
             foreach (var item in courses)
             {
                 if (item.code == Name)
                 {
-                    Console.WriteLine(item.cb_price);
+                    isEnter = false;
+                    Message sentMessage5 = await botClient.SendTextMessageAsync(
+                        chatId: update.CallbackQuery.From.Id,
+                        text: item.cb_price,
+                        cancellationToken: cancellationToken);
                 }
+
+
+
+                
+                
             }
+                    if (isEnter)
+            {
 
-
+                Message sentMessage5 = await botClient.SendTextMessageAsync(
+                    chatId: update.Message.Chat.Id,
+                    text: "eroor",
+                    cancellationToken: cancellationToken); 
+            }
         }
-
-
-
-}
+    }
 }
