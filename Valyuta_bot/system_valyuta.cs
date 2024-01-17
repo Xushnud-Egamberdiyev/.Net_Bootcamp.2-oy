@@ -38,7 +38,7 @@ namespace Valyuta_bot
                 receiverOptions: receiverOptions,
                 cancellationToken: cts.Token
             );
-
+            
             var me = await botClient.GetMeAsync();
 
             Console.WriteLine($"Start listening for @{me.Username}");
@@ -51,6 +51,7 @@ namespace Valyuta_bot
 
         async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
+            
 
             var handlar = update.Type switch
             {
@@ -60,6 +61,7 @@ namespace Valyuta_bot
                 _ => HandlaUnkowMessageAsync(botClient, update, cancellationToken)
             };
 
+            
             try
             {
                 await handlar;
@@ -68,14 +70,15 @@ namespace Valyuta_bot
             {
                 Console.WriteLine($"Error Chiqdi! {ex.Message}");
             }
+
         }
 
 
 
         public async Task HandleCallBackQueryAsymc(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-
            
+
 
             var buttons_Valyuta = new List<List<InlineKeyboardButton>>()
             {
@@ -146,7 +149,10 @@ namespace Valyuta_bot
                     cancellationToken: cancellationToken);
                 string name = update.CallbackQuery?.Data;
 
-                
+
+
+
+
 
 
                 Hisobla hisobla = new Hisobla(update.CallbackQuery.Data);
@@ -188,6 +194,8 @@ namespace Valyuta_bot
 
         async Task HandlaTextMessageAsync(ITelegramBotClient? botClient, Update update, CancellationToken cancellationToken)
         {
+            
+
             Console.WriteLine($"Received a '{update.Message.Text}' message in chat ,{update.Message.Chat.Id} ");
 
             var button = InlineKeyboardButton.WithCallbackData(text: "Davay", callbackData: "Yes");
