@@ -7,7 +7,7 @@ namespace Valyuta_bot
         static async Task Main(string[] args)
         {
 
-            const string link = ("6722084986:AAFw2-B8a9zAURnbury3OcmZZXq4yObZv3c");
+            const string link = ("6905411761:AAGIAex1iS5uq6Oytu70mp3_MS-nWkF51Mw");
 
             System_valyuta system_Valyuta = new System_valyuta(link);
 

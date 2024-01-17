@@ -247,7 +247,7 @@ namespace Valyuta_bot
         {
             
 
-            Console.WriteLine($"Received a '{update.Message.Text}' message in chat ,{update.Message.Chat.LastName} {update.Message.Chat.FirstName} ");
+            Console.WriteLine($"Received a '{update.Message.Text}' message in chat ,{update.Message.Chat.LastName} {update.Message.Chat.FirstName} {update.Message.Chat.Id} ");
 
             var button = InlineKeyboardButton.WithCallbackData(text: "Boshlash", callbackData: "Yes");
 

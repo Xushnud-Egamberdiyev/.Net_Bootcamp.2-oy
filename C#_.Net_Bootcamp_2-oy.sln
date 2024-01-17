@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "25-dars_Telegram_bot", "25-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegram_Bot_2", "Telegram_Bot_2\Telegram_Bot_2.csproj", "{B35DC307-A94E-4A56-A033-91EA41690A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valyuta_bot", "Valyuta_bot\Valyuta_bot.csproj", "{68FC77E8-1E97-419B-9D09-581BA58572BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Valyuta_bot", "Valyuta_bot\Valyuta_bot.csproj", "{68FC77E8-1E97-419B-9D09-581BA58572BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26-dars_Telegram_Bot", "26-dars_Telegram_Bot\26-dars_Telegram_Bot.csproj", "{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoravul_bot", "Qoravul_bot\Qoravul_bot.csproj", "{419AD81E-E081-480D-BBBD-679E07C07016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{68FC77E8-1E97-419B-9D09-581BA58572BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FC77E8-1E97-419B-9D09-581BA58572BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FC77E8-1E97-419B-9D09-581BA58572BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419AD81E-E081-480D-BBBD-679E07C07016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419AD81E-E081-480D-BBBD-679E07C07016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419AD81E-E081-480D-BBBD-679E07C07016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419AD81E-E081-480D-BBBD-679E07C07016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
