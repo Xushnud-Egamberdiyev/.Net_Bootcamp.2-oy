@@ -122,6 +122,19 @@ internal class Program
              text: Create,
              cancellationToken: cancellationToken);
 
+
+            var button = new List<InlineKeyboardButton>()
+            {
+                InlineKeyboardButton.WithCallbackData("Po'stni ko'rish","1"),
+                InlineKeyboardButton.WithCallbackData("Postni joylash", "2"),
+                InlineKeyboardButton.WithCallbackData("Postni edit qilish", "3"),
+            };
+            await botClient.SendTextMessageAsync(
+                chatId: update.CallbackQuery.From.Id,
+                replyMarkup: new InlineKeyboardMarkup(button),
+                text: "              Tanglang",
+                cancellationToken: cancellationToken);
+
         }
         if (update.CallbackQuery.Data == "2")
         {
@@ -162,12 +175,12 @@ internal class Program
         };
     }
 
-    private static async Task HandlePhotoMessageAync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+    static async Task HandlePhotoMessageAync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
-        Create = update.Message.Text;
+        Create = update.Message.Photo.ToString();
         await botClient.SendPhotoAsync(
         chatId: urlbase,
-        photo: InputFile.FromUri(""),
+        photo: InputFile.FromUri("https://www.google.com/imgres?imgurl=https%3A%2F%2Fyt3.googleusercontent.com%2FdnKYAG3ekM2A-UtERs7JKZg4pbrobw3u8v3Ze6nKL7uyyH5uDUCCAvoXTe4A3U-JmI3lPglu%3Ds900-c-k-c0x00ffffff-no-rj&tbnid=kzho2nE0xSlO_M&vet=12ahUKEwj_m7Cy-eSDAxU3DhAIHfh2Aw8QMygCegQIARB3..i&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC9AL7-arjrHLFUmWQrf6NSQ&docid=g7gYKv0AAEdn1M&w=900&h=900&q=massa&ved=2ahUKEwj_m7Cy-eSDAxU3DhAIHfh2Aw8QMygCegQIARB3"),
         cancellationToken: cancellationToken);
 
         var button = new List<InlineKeyboardButton>()
@@ -194,7 +207,7 @@ internal class Program
 
     private static async Task HandleAudioMessageAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
-        Create = update.Message.Text;
+        Create = update.Message.Voice.ToString();
         await botClient.SendVoiceAsync(
         chatId: urlbase,
         voice: InputFile.FromUri("https://github.com/TelegramBots/book/raw/master/src/docs/audio-guitar.mp3"),
@@ -216,12 +229,10 @@ internal class Program
 
     private static async Task HandleVideoMessageAync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
-        Create = update.Message.Text;
+        Create = update.Message.Video.ToString();
         await botClient.SendVideoAsync(
         chatId: urlbase,
-        video: InputFile.FromUri("https://www.youtube.com/watch?v=22ZfB_2_4cc"),
-         thumbnail: InputFile.FromUri("https://www.youtube.com/watch?v=22ZfB_2_4cc"),
-         supportsStreaming: true,
+        video: InputFile.FromUri("https://youtu.be/lE8NdaX97m0?feature=shared"),
         cancellationToken: cancellationToken);
 
         var button = new List<InlineKeyboardButton>()
@@ -259,7 +270,7 @@ internal class Program
             cancellationToken: cancellationToken
             );
         }
-        if (update.Message.Text.Length > 18 && update.Message.Text.Length < 30)
+        if (update.Message.Text.Length > 22 && update.Message.Text.Length < 30)
         {
             for (int i = 13; i < update.Message.Text.Length; i++)
             {
@@ -278,7 +289,7 @@ internal class Program
             cancellationToken: cancellationToken
             );
         }
-        if (update.Message.Text.Length > 18 && update.Message.Text.Length < 60)
+        if (update.Message.Text.Length > 20 && update.Message.Text.Length < 60)
         {
             url_link = update.Message.Text;
             await botClient.SendTextMessageAsync(

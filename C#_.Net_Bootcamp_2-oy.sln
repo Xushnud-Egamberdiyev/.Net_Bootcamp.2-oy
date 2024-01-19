@@ -11,9 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegram_Bot_2", "Telegram_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Valyuta_bot", "Valyuta_bot\Valyuta_bot.csproj", "{68FC77E8-1E97-419B-9D09-581BA58572BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26-dars_Telegram_Bot", "26-dars_Telegram_Bot\26-dars_Telegram_Bot.csproj", "{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "26-dars_Telegram_Bot", "26-dars_Telegram_Bot\26-dars_Telegram_Bot.csproj", "{A55C53D4-3FA0-4DD6-8661-6BAF4A1C60A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoravul_bot", "Qoravul_bot\Qoravul_bot.csproj", "{419AD81E-E081-480D-BBBD-679E07C07016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qoravul_bot", "Qoravul_bot\Qoravul_bot.csproj", "{419AD81E-E081-480D-BBBD-679E07C07016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qoravul_bot2", "Qoravul_bot2\Qoravul_bot2.csproj", "{59122519-F4BA-4ECD-B05C-E99A2A104DA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fayl_qidiruv", "Fayl_qidiruv\Fayl_qidiruv.csproj", "{3F36683B-02BB-4552-8CCE-D9D01ECE07CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{D174D51E-B9EF-4ACF-823F-309E09DA2B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "29-dars_Insta_Video_Saver", "29-dars_Insta_Video_Saver\29-dars_Insta_Video_Saver.csproj", "{E3D259B2-987C-4C7B-A9C2-B81CF70515B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{419AD81E-E081-480D-BBBD-679E07C07016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{419AD81E-E081-480D-BBBD-679E07C07016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{419AD81E-E081-480D-BBBD-679E07C07016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59122519-F4BA-4ECD-B05C-E99A2A104DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59122519-F4BA-4ECD-B05C-E99A2A104DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59122519-F4BA-4ECD-B05C-E99A2A104DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59122519-F4BA-4ECD-B05C-E99A2A104DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F36683B-02BB-4552-8CCE-D9D01ECE07CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F36683B-02BB-4552-8CCE-D9D01ECE07CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F36683B-02BB-4552-8CCE-D9D01ECE07CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F36683B-02BB-4552-8CCE-D9D01ECE07CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D174D51E-B9EF-4ACF-823F-309E09DA2B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D174D51E-B9EF-4ACF-823F-309E09DA2B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D174D51E-B9EF-4ACF-823F-309E09DA2B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D174D51E-B9EF-4ACF-823F-309E09DA2B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D259B2-987C-4C7B-A9C2-B81CF70515B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D259B2-987C-4C7B-A9C2-B81CF70515B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D259B2-987C-4C7B-A9C2-B81CF70515B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D259B2-987C-4C7B-A9C2-B81CF70515B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
