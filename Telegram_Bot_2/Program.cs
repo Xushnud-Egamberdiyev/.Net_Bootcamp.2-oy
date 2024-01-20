@@ -7,7 +7,7 @@ namespace Telegram_Bot_2
         static async Task Main(string[] args)
         {
 
-            const string link =  ("6370570532:AAEFO9eKaIeyaZJW2Sn7oQfLSD41LpkMPBA");
+            const string link =  ("6915580106:AAEordPFcwCJB6tjo5SAPTJjo_cN_ZWUJfk");
 
             System_bot system_Bot = new System_bot(link);
 
