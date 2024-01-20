@@ -115,7 +115,12 @@ namespace _28_dars_Insta_VideoSaver_subscriber
                     cancellationToken: cancellationToken
 
                     );
+                Message sentMessage2 = await botClient.SendPhotoAsync( 
+                    chatId: update.Message.Chat.Id,
+                    photo: $"{replaxemessage}",
+                    cancellationToken: cancellationToken
 
+                    );
             }
             
 
