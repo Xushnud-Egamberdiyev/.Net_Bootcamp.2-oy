@@ -212,7 +212,7 @@ namespace _28_dars_Insta_VideoSaver_subscriber
             if (messageText == "/start")
             {
 
-                var getchatmember = await botClient.GetChatMemberAsync(/*ID or NAME of the chat*/"@muhammadabdulloh_uz",/*user id*/ id);
+                var getchatmember = await botClient.GetChatMemberAsync(/*ID or NAME of the chat*/"New_post_kanal_1",/*user id*/ id);
                 var getchatmember2 = await botClient.GetChatMemberAsync(/*ID or NAME of the chat*/"@n11chan",/*user id*/ id);
 
                 if (getchatmember.ToString() != "Member")
@@ -260,7 +260,7 @@ namespace _28_dars_Insta_VideoSaver_subscriber
                     //First row. You can also add multiple rows.
                     new []
                     {
-                        InlineKeyboardButton.WithUrl(text: "Canale 1", url: "https://t.me/muhammadabdulloh_uz"),
+                        InlineKeyboardButton.WithUrl(text: "Canale 1", url: "https://t.me/new_post_kanal_1"),
                         InlineKeyboardButton.WithUrl(text: "Canale 2", url: "https://t.me/n11chan"),
                     },
                 });
