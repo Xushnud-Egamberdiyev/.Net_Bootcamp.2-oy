@@ -9,11 +9,11 @@ internal class Program
 
         system_Bot system_Bot = new system_Bot(link);
 
-        await system_Bot.BotHandle();
+       
 
         try
         {
-            await system_Bot.BotHandle();
+           system_Bot.Run().Wait();
 
         }
         catch (Exception ex)

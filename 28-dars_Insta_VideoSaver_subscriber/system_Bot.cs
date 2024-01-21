@@ -18,12 +18,11 @@ namespace _28_dars_Insta_VideoSaver_subscriber
         public string Token { get; set; }
         public system_Bot(string token)
         {
-            this.Token = token;
+            Token = token;
         }
-
-        public async Task BotHandle()
+        public async Task Run()
         {
-            var botClient = new TelegramBotClient($"{this.Token}");
+            var botClient = new TelegramBotClient($"{Token}");
 
             using CancellationTokenSource cts = new();
 
@@ -47,194 +46,58 @@ namespace _28_dars_Insta_VideoSaver_subscriber
 
             // Send cancellation request to stop bot
             cts.Cancel();
-
         }
 
-        async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+        public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-
-
-            var handlar = update.Type switch
-            {
-                UpdateType.Message => HandlaMessageAsync(botClient, update, cancellationToken),
-                UpdateType.EditedMessage => HandleVideoMessageAync2(botClient, update, cancellationToken),
-                UpdateType.CallbackQuery => HandleCallBackQueryAsymc(botClient, update, cancellationToken),
-                _ => HandlaUnkowMessageAsync(botClient, update, cancellationToken)
-            };
-
-
+            //return;
             try
             {
-                await handlar;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error Chiqdi! {ex.Message}");
-            }
+                if (update.Message is not { } message) return;
+                if (message.Chat is not { } chat) return;
 
-        }
+                // Foydalanuvchining chat id'sini olish
+                long userId = chat.Id;
 
-        private Task HandleCallBackQueryAsymc(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+                Console.WriteLine($"{userId} => {chat.Username} => {chat.Username}");
 
-        private Task HandleVideoMessageAync2(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+                // Kanalning username'sini o'zgartiring
+                string channelUsername1 = "@code_en";
+                string channelUsername2 = "New_post_kanal_1";
 
-        async Task HandlaMessageAsync(ITelegramBotClient? botClient, Update update, CancellationToken cancellationToken)
-        {
-            var message = update.Message;
-            var handlar = message.Type switch
-            {
+                // Foydalanuvchini tekshirish
+                var chatMember1 = await botClient.GetChatMemberAsync(channelUsername1, userId);
+                var chatMember2 = await botClient.GetChatMemberAsync(channelUsername2, userId);
+                Console.WriteLine(chatMember1.ToString());
+                Console.WriteLine(chatMember2.ToString());
 
-                MessageType.Text => HandlaTextMessageAsync(botClient, update, cancellationToken),
-                _ => HandlaUnkowMessageAsync(botClient, update, cancellationToken)
-            };
-        }
-
-
-        private Task HandlaUnkowMessageAsync(ITelegramBotClient? botClient, Update update, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        async Task HandlaTextMessageAsync(ITelegramBotClient? botClient, Update update, CancellationToken cancellationToken)
-        {
-
-            async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
-    {
-
-            var botClientDev = new TelegramBotClient("6812304166:AAHJNYERlObqJa9AwISbcS4tTCfDuCS6vcY");
-
-            //block 
-            int blockLevel = 0;
-            bool messDeleted = false;
-            string[] badWords = new string[] { "bad word", "badword" };
-            string[] veryBadWords = new string[] { "very bad word", "verybadword" };
-
-            //Time
-            int year;
-            int month;
-            int day;
-            int hour;
-            int minute;
-            int second;
-
-            //Messages and user info
-            long chatId = 0;
-            string messageText;
-            int messageId;
-            string firstName;
-            string lastName;
-            long id;
-            Message sentMessage;
-
-            //poll info
-            int pollId = 0;
-
-            //----------------------//
-
-            //Read time and save variables
-            year = int.Parse(DateTime.UtcNow.Year.ToString());
-            month = int.Parse(DateTime.UtcNow.Month.ToString());
-            day = int.Parse(DateTime.UtcNow.Day.ToString());
-            hour = int.Parse(DateTime.UtcNow.Hour.ToString());
-            minute = int.Parse(DateTime.UtcNow.Minute.ToString());
-            second = int.Parse(DateTime.UtcNow.Second.ToString());
-            Console.WriteLine("Data: " + year + "/" + month + "/" + day);
-            Console.WriteLine("Time: " + hour + ":" + minute + ":" + second);
-
-            //cts token
-            using var cts = new CancellationTokenSource();
-
-            // Bot StartReceiving, does not block the caller thread. Receiving is done on the ThreadPool.
-            var receiverOptions = new ReceiverOptions
-            {
-                AllowedUpdates = { } // receive all update types
-            };
-            botClientDev.StartReceiving(
-                HandleUpdateAsync,
-                HandleErrorAsync,
-                receiverOptions,
-                cancellationToken: cts.Token);
-
-            var me = await botClientDev.GetMeAsync();
-
-            //write on console a hello message by bot 
-            Console.WriteLine($"\nHello! I'm {me.Username} and i'm your Bot!");
-
-            // Send cancellation request to stop bot and close console
-            Console.ReadKey();
-            cts.Cancel();
-
-            //----------------------//
-
-
-
-
-            // Only process Message updates: https://core.telegram.org/bots/api#message
-            if (update.Type != UpdateType.Message)
-            return;
-        // Only process text messages
-        if (update.Message!.Type != MessageType.Text)
-            return;
-
-        //set variables
-        chatId = update.Message.Chat.Id;
-        messageText = update.Message.Text;
-        messageId = update.Message.MessageId;
-        firstName = update.Message.From.FirstName;
-        lastName = update.Message.From.LastName;
-        id = update.Message.From.Id;
-        year = update.Message.Date.Year;
-        month = update.Message.Date.Month;
-        day = update.Message.Date.Day;
-        hour = update.Message.Date.Hour;
-        minute = update.Message.Date.Minute;
-        second = update.Message.Date.Second;
-
-        //when receive a message show data and time on console.
-        Console.WriteLine("\nData message --> " + year + "/" + month + "/" + day + " - " + hour + ":" + minute + ":" + second);
-        //show the message, the chat id and the user info on console.
-        Console.WriteLine($"Received a '{messageText}' message in chat {chatId} from user:\n" + firstName + " - " + lastName + " - " + " 5873853");
-
-        //set text all lowercase
-        messageText = messageText.ToLower();
-
-        if (messageText != null && int.Parse(day.ToString()) >= day && int.Parse(hour.ToString()) >= hour && int.Parse(minute.ToString()) >= minute && int.Parse(second.ToString()) >= second - 10)
-        {
-
-
-
-            if (messageText == "/start")
-            {
-
-                var getchatmember = await botClient.GetChatMemberAsync(/*ID or NAME of the chat*/"New_post_kanal_1",/*user id*/ id);
-                var getchatmember2 = await botClient.GetChatMemberAsync(/*ID or NAME of the chat*/"@n11chan",/*user id*/ id);
-
-                if (getchatmember.ToString() != "Member")
+                // Agar foydalanuvchi kanalda obuna bo'lsa
+                if (chatMember1.Status == ChatMemberStatus.Member && chatMember2.Status == ChatMemberStatus.Member)
                 {
-                    await UserIsSubscriber(botClient, id, cancellationToken);
+                    Console.WriteLine($"User -> {message.Chat.FirstName} Chat Id -> {message.Chat.Id}\nMessage ->{message.Text}\n\n");
 
+                    Controller controller = new Controller();
+                    var handler = update.Type switch
+                    {
+                        UpdateType.Message => controller.HandleMessageAsync(botClient, update, cancellationToken),
+                        //UpdateType.D=> messageController.EssentialAsyncMessage(botClient, update, cancellationToken),
+                        _ => controller.OtherMessage(botClient, update, cancellationToken),
+                    };
                 }
-                else if (getchatmember2.ToString() == "Member")
+                else
                 {
                     await botClient.SendTextMessageAsync(
-                        chatId: chatId,
-                        text: "Thank You for subscription", //The message to display
-                        cancellationToken: cancellationToken);
+                        chatId: userId,
+                        text: "Siz kanalga obuna bo'lmagansiz. Iltimos, avval kanalga obuna bo'ling.",
+                        replyMarkup: Button.inlineKeyboard,
+                        cancellationToken: cancellationToken
+                    );
                 }
-
-
             }
-
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-
-        Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+        public async Task<Task> HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
             var ErrorMessage = exception switch
             {
@@ -243,78 +106,9 @@ namespace _28_dars_Insta_VideoSaver_subscriber
                 _ => exception.ToString()
             };
 
-            Console.WriteLine(ErrorMessage);
+            await Console.Out.WriteLineAsync(ErrorMessage);
             return Task.CompletedTask;
         }
 
-
-    }
-
-
-    async Task UserIsSubscriber(ITelegramBotClient botClient, long id, CancellationToken cancellationToken)
-    {
-
-        // create the "buttons" with the URL of the channel to join.
-        InlineKeyboardMarkup inlineKeyboard = new(new[]
-              {
-                    //First row. You can also add multiple rows.
-                    new []
-                    {
-                        InlineKeyboardButton.WithUrl(text: "Canale 1", url: "https://t.me/new_post_kanal_1"),
-                        InlineKeyboardButton.WithUrl(text: "Canale 2", url: "https://t.me/n11chan"),
-                    },
-                });
-
-        Message sentMessage = await botClient.SendTextMessageAsync(
-        chatId: id,
-        text: "Before use the bot you must follow this channels.\nWhen you are ready, click -> /home <- to continue", //The message to display
-        replyMarkup: inlineKeyboard,
-        cancellationToken: cancellationToken);
-
-    }
-
-            string replaxemessage = update.Message.Text.Replace("www.", "dd");
-
-            if (update.Message.Text.StartsWith("https://www.instagram.com"))
-            {
-
-                Message sentMessage = await botClient.SendVideoAsync(
-                    chatId: update.Message.Chat.Id,
-                    video: $"{replaxemessage}", 
-                    supportsStreaming: true,
-                    cancellationToken: cancellationToken
-
-                    );
-                Message sentMessage2 = await botClient.SendPhotoAsync( 
-                    chatId: update.Message.Chat.Id,
-                    photo: $"{replaxemessage}",
-                    cancellationToken: cancellationToken
-
-                    );
-            }
-            
-
-        }
-
-
-
-
-
-
-
-        public Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
-        {
-            var ErrorMessage = exception switch
-            {
-                ApiRequestException apiRequestException
-                    => $"Telegram API Error:\n[{apiRequestException.ErrorCode}]\n{apiRequestException.Message}",
-                _ => exception.ToString()
-            };
-
-            Console.WriteLine(ErrorMessage);
-            return Task.CompletedTask;
-        }
-
-       
     }
 }
