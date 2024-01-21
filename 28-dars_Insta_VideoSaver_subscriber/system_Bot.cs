@@ -62,17 +62,14 @@ namespace _28_dars_Insta_VideoSaver_subscriber
                 Console.WriteLine($"{userId} => {chat.Username} => {chat.Username}");
 
                 // Kanalning username'sini o'zgartiring
-                string channelUsername1 = "@code_en";
                 string channelUsername2 = "New_post_kanal_1";
 
                 // Foydalanuvchini tekshirish
-                var chatMember1 = await botClient.GetChatMemberAsync(channelUsername1, userId);
                 var chatMember2 = await botClient.GetChatMemberAsync(channelUsername2, userId);
-                Console.WriteLine(chatMember1.ToString());
                 Console.WriteLine(chatMember2.ToString());
 
                 // Agar foydalanuvchi kanalda obuna bo'lsa
-                if (chatMember1.Status == ChatMemberStatus.Member && chatMember2.Status == ChatMemberStatus.Member)
+                if (chatMember2.Status == ChatMemberStatus.Member)
                 {
                     Console.WriteLine($"User -> {message.Chat.FirstName} Chat Id -> {message.Chat.Id}\nMessage ->{message.Text}\n\n");
 
