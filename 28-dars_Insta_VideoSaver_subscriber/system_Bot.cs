@@ -42,10 +42,7 @@ namespace _28_dars_Insta_VideoSaver_subscriber
             var me = await botClient.GetMeAsync();
 
             Console.WriteLine($"Start listening for @{me.Username}");
-            Console.ReadLine();
-
-            // Send cancellation request to stop bot
-            cts.Cancel();
+          
         }
 
         public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
@@ -62,7 +59,7 @@ namespace _28_dars_Insta_VideoSaver_subscriber
                 Console.WriteLine($"{userId} => {chat.Username} => {chat.Username}");
 
                 // Kanalning username'sini o'zgartiring
-                string channelUsername2 = "New_post_kanal_1";
+                string channelUsername2 = "@new_post_kanal_1";
 
                 // Foydalanuvchini tekshirish
                 var chatMember2 = await botClient.GetChatMemberAsync(channelUsername2, userId);

@@ -14,8 +14,8 @@ namespace _28_dars_Insta_VideoSaver_subscriber
             //First row. You can also add multiple rows.
             new []
             {
-                InlineKeyboardButton.WithUrl(text: "Kanal 1", url: "https://t.me/code_en"),
-                InlineKeyboardButton.WithUrl(text: "Kanal 2", url: "https://t.me/N11_Telegram")
+                InlineKeyboardButton.WithUrl(text: "Kanal 1", url: "@new_post_kanal_1"),
+                
             },
         });
     }
