@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "27-dars_Insta_Video_Saver",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "28-dars_Insta_VideoSaver_subscriber", "28-dars_Insta_VideoSaver_subscriber\28-dars_Insta_VideoSaver_subscriber.csproj", "{4B9BA838-5DDE-4DB9-9E37-3A4F8F04BC85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Takrorlash", "Takrorlash\Takrorlash.csproj", "{2E622747-5CA8-4732-8C53-1857BE024542}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Takrorlash", "Takrorlash\Takrorlash.csproj", "{2E622747-5CA8-4732-8C53-1857BE024542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{5E48A4A8-2BB6-4693-AA3F-0DE20898915D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{2E622747-5CA8-4732-8C53-1857BE024542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E622747-5CA8-4732-8C53-1857BE024542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E622747-5CA8-4732-8C53-1857BE024542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E48A4A8-2BB6-4693-AA3F-0DE20898915D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E48A4A8-2BB6-4693-AA3F-0DE20898915D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E48A4A8-2BB6-4693-AA3F-0DE20898915D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E48A4A8-2BB6-4693-AA3F-0DE20898915D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
