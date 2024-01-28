@@ -87,7 +87,7 @@ namespace _26_dars_Telegram_Bot
                 InlineKeyboardButton.WithCallbackData("Image update", "6"),
                 InlineKeyboardButton.WithCallbackData("Orqaga qaytish", "7"),
             };
-                await botClient.SendTextMessageAsync(
+                 await botClient.SendTextMessageAsync(
                     chatId: update.CallbackQuery.From.Id,
                     replyMarkup: new InlineKeyboardMarkup(button2),
                     text: "tanlang",
