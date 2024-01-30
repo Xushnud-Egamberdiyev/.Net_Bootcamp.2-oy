@@ -7,7 +7,7 @@ using System.Diagnostics.Metrics;
 //    "subject_id" BIGINT NOT NULL
 //);
 //ALTER TABLE
-//    "student_access" ADD PRIMARY KEY("student_id");
+//    "student_access" ADD PRIMARY KEY("student_id","subject");
 
 
 //CREATE TABLE "student"(
@@ -142,8 +142,8 @@ using System.Diagnostics.Metrics;
 
 //select* from subject
 //select * from student
- 
- 
+
+
 //CREATE TABLE "archive"
 //(
 //    id bigserial NOT NULL,
