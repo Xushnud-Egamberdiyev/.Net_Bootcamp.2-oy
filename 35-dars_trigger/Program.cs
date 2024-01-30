@@ -7,7 +7,7 @@ using System.Reflection.Metadata;
 //CREATE TABLE "student_access"(
 //    "student_id" BIGINT NOT NULL,
 //    "subject_id" BIGINT NOT NULL,
-//Constraint student PRIMARY KEY ("student_id","subject_id"),
+//Constraint "student_access" PRIMARY KEY ("student_id","subject_id"),
 //CONSTRAINT "student_access_subject_id_foreign" FOREIGN KEY("subject_id") REFERENCES "subject"("id"),
 //CONSTRAINT "student_access_student_id_foreign" FOREIGN KEY("student_id") REFERENCES "student"("id")
 
