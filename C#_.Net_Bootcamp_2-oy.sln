@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{6C3A923A-B10A-4B83-85CA-D3CCAACFAAA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "35-dars_trigger", "35-dars_trigger\35-dars_trigger.csproj", "{D1195CEE-AA69-4FAF-BFCC-CD09C6AC6BE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "35-dars_trigger", "35-dars_trigger\35-dars_trigger.csproj", "{D1195CEE-AA69-4FAF-BFCC-CD09C6AC6BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "36-dars_Database", "36-dars_Database\36-dars_Database.csproj", "{3B5191D3-F6BE-4736-BCE4-2AE104DC70A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{D1195CEE-AA69-4FAF-BFCC-CD09C6AC6BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1195CEE-AA69-4FAF-BFCC-CD09C6AC6BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1195CEE-AA69-4FAF-BFCC-CD09C6AC6BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5191D3-F6BE-4736-BCE4-2AE104DC70A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5191D3-F6BE-4736-BCE4-2AE104DC70A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5191D3-F6BE-4736-BCE4-2AE104DC70A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5191D3-F6BE-4736-BCE4-2AE104DC70A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
