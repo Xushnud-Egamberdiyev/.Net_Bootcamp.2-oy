@@ -1,13 +1,14 @@
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Data;
 
 //CREATE TABLE "student_access"(
 //    "student_id" BIGINT NOT NULL,
-//    "subject_id" BIGINT NOT NULL
+//    "subject_id" BIGINT NOT NULL,
+//Constraint student PRIMARY KEY ("student_id","subject_id")
 //);
-//ALTER TABLE
-//    "student_access" ADD PRIMARY KEY("student_id","subject");
+
 
 
 //CREATE TABLE "student"(
